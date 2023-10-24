@@ -869,6 +869,23 @@ footer {
   width: 100%;
 }
 
+.accordion-content tr td button {
+  position: relative;
+  border: solid 1px #888;
+  padding: 3px 16px;
+  margin: 3px 0;
+  background: none;
+}
+
+.accordion-content tr td button .accordion-content-lupe {
+  position: absolute;
+  width: 32px;
+  bottom: -4px;
+  right: -8px;
+  background: #f5efe2;
+  border-radius: 50%;
+}
+
 .estate-rent {
   color: #ac4c4c;
   font-weight: bold;
@@ -937,6 +954,89 @@ footer {
 .accordion-content-child td {
   border: solid 1px #888;
   padding: 5px;
+}
+
+/* モーダルと背景の指定 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 50%);
+  padding-top: 100px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+  overscroll-behavior-y: contain;
+}
+
+/* モーダルの擬似要素の指定 */
+.modal:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: -0.2em;
+}
+
+/* クラスが追加された時の指定 */
+.modal.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* モーダル内側の指定 */
+.modal-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 600px;
+  width: 90%;
+}
+
+/* モーダルを閉じるボタンの指定 */
+.modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #a9894a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* モーダルのコンテンツ部分の指定 */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+}
+
+.modal-content > img {
+  padding-bottom: 20px;
+}
+
+.modal-content > img:last-child {
+  padding-bottom: 0;
+}
+
+/* モーダルのコンテンツ部分のテキストの指定 */
+.modal-content p {
+  margin: 1em 0;
 }
 
 @keyframes fadeInAnime {
